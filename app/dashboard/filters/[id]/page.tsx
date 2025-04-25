@@ -54,27 +54,30 @@ const UniversityDetails = () => {
             </Typography>
           </button>
           <div className="flex flex-col gap-4 pb-10">
-            <Image
-              src={university?.poster || ''}
-              alt={`Logo`}
-              className="max-w-full w-full rounded-xl"
-            />
+            <div className="flex flex-col gap-4 max-w-full w-full">
+              <Typography variant="headline" size="xs">
+                {university?.name}
+              </Typography>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: university?.description || "",
+                }}
+              />
+            </div>
 
-            <div className="flex flex-col md:flex-row justify-between gap-4">
-              {/* Chap tomon (60%) */}
-              <div className="flex flex-col gap-4 w-full md:w-[60%]">
-                <Typography variant="headline" size="xs">
-                  {university?.name}
-                </Typography>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: university?.description || "",
-                  }}
+            <div className="flex flex-col md:flex-row justify-between gap-4 items-stretch">
+              {/* Chap tomon (40%) */}
+              <div className="w-full md:w-[40%] flex items-stretch">
+                <Image
+                  src={university?.poster || ""}
+                  alt={university?.name || "Logo"}
+                  className="w-full h-full rounded-xl"
+                  style={{ objectFit: "fill" }}
                 />
               </div>
 
-              {/* O'ng tomon (40%) */}
-              <div className="w-full md:w-[40%]">
+              {/* O'ng tomon (60%) */}
+              <div className="w-full md:w-[60%] flex flex-col">
                 <ApplyCard data={university} />
               </div>
             </div>

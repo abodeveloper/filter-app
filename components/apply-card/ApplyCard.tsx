@@ -59,7 +59,7 @@ const ApplyCard = ({ data }: Record<string, any>) => {
 
   return (
     <>
-      <div className="bg-[#F7F7F7] p-4 min-w-[319px] rounded-lg h-fit">
+      <div className="bg-[#F7F7F7] p-4 min-w-[319px] rounded-lg">
         <Typography variant="body" size="md" weight="semi-bold">
           Asosiy ma'lumotlar
         </Typography>
